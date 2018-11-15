@@ -38,10 +38,12 @@ vignettes/*.pdf
 rsconnect/
 
 # Other 
+.ipynb_checkpoints
 *.pdf
 *.png
 !presentations/**/*.png
 *.pptx
+*.doc*
 *.xls*
 *.jpeg
 !presentations/**/*.jpeg
@@ -51,7 +53,10 @@ rsconnect/
 *.zip
 !presentations/librariesNew/*.png
 .Rproj.user
-.Rproj
+*.Rproj
+exercises/**/*html
+notebooks/**/*html
+
 
 # mac rubbish
 .DS_Store

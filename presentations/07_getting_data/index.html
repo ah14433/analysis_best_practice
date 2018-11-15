@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Getting and storing data</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Getting and storing data">
+  <meta name="author" content="Robert Arbon">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="../libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="../libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="../libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="../libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="../libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="../libraries/frameworks/io2012/js/slides" 
+    src="../libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Getting and storing data</h1>
+    <h2>Data analysis best practice</h2>
+    <p>Robert Arbon<br/>Data scientist, Jean Golding Institute</p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Overview</h2>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li>FAIR principles</li>
+<li>Storing your data and research</li>
+<li>Backing up</li>
+<li>Metadata</li>
+<li>Retrieving data</li>
+<li>File formats</li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-2" style="background:;">
+  <hgroup>
+    <h2>Your research</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Your research includes: 
+
+<ul>
+<li>Raw data</li>
+<li>Processed data </li>
+<li>Statistical analyses and models</li>
+<li>Reports, presentations, papers</li>
+</ul></li>
+<li>Your data will be handled slightly different but general principles apply to all of your research. </li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>FAIR principles</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><a href="https://www.nature.com/articles/sdata201618">https://www.nature.com/articles/sdata201618</a></p>
+
+<div class="rimage center"><img src="fig/FAIR.png" title="plot of chunk unnamed-chunk-1" alt="plot of chunk unnamed-chunk-1" width="100%" class="plot" /></div>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>FAIR principles</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Your research should be FAIR:</p>
+
+<div style='float:left;width:48%;'>
+  <ul>
+<li><strong>F</strong>indable
+
+<ul>
+<li>accurate abstracts and keywords </li>
+<li>appears in search engines</li>
+<li>use well known repositories</li>
+</ul></li>
+<li><strong>A</strong>ccessible
+
+<ul>
+<li>open access if possible (ethics may prevent this)</li>
+<li>use web interfaces and APIs</li>
+</ul></li>
+</ul>
+
+</div>
+<div style='float:right;width:48%;'>
+  <ul>
+<li><strong>I</strong>nteroperable
+
+<ul>
+<li>Adhear to open standards, nomenclature and common syntax</li>
+<li>Good documentation</li>
+<li>Open source software</li>
+</ul></li>
+<li><strong>R</strong>eusable
+
+<ul>
+<li>Can someone re-use your data, analysis and understand your reports?</li>
+<li>Use permissable licences (e.g. CC-BY)</li>
+</ul></li>
+</ul>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-5" style="background:;">
+  <hgroup>
+    <h2>Storing data</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>You&#39;ve collected your data, it can be in: 
+
+<ul>
+<li>Physical format e.g. paperwork, print-outs, samples. </li>
+<li>Electronic data e.g. simulation results, electronic surveys, public datasets</li>
+</ul></li>
+<li>If not already in electronic format you&#39;ll transcribe the results to electronic format. </li>
+<li>Wherever possible, <strong>KEEP YOUR RAW DATA</strong>
+
+<ul>
+<li>Physical fomat: keep it in a box, fridge, cupboard under the stairs etc. </li>
+<li>Electronic format:
+
+<ol>
+<li>Keep in a <strong>READ ONLY</strong> subdirectory</li>
+<li>The directory should be located on a <strong>MANAGED STORAGE DATA</strong> cluster (at least)</li>
+</ol></li>
+</ul></li>
+</ul>
+
+<p>If it&#39;s just stored on your personal computer <strong>YOU DON&#39;T HAVE IT</strong></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-6" style="background:;">
+  <hgroup>
+    <h2>Storage locations - Bristol University</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li><p>Research Data Storage Facility, <a href="http://www.bristol.ac.uk/acrc/research-data-storage-facility/">RDSF</a></p>
+
+<ul>
+<li>good for long-term archiving of data</li>
+<li>DOI available</li>
+<li>your PI needs to apply for space</li>
+<li>you can map the drive to your local machine (ask IT services for help)</li>
+<li>there is a mechanism for sharing (we&#39;ll be using it later)</li>
+</ul></li>
+<li><p><a href="https://uob.sharepoint.com/sites/systemsupport/SitePages/onedrive-home.aspx">Microsoft OneDrive for Business</a></p>
+
+<ul>
+<li>good for backing up all files (not just data) and sharing with colleagues</li>
+<li>personal space of 5TB</li>
+<li>you can sync the drive with your local machine</li>
+<li>not compatible with OSF (only personal OneDrive accounts are)</li>
+</ul></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-7" style="background:;">
+  <hgroup>
+    <h2>Storage locations - Personal</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li><p><a href="https://www.google.co.uk/drive/">Google Drive</a>/<a href="https://www.dropbox.com/">Dropbox</a></p>
+
+<ul>
+<li>Similar to OneDrive but only ~15GB free ( ~ £80/year/TB)</li>
+<li>Compatible with OSF</li>
+</ul></li>
+<li><p><a href="https://figshare.com/">Figshare</a></p>
+
+<ul>
+<li>Similar to RDSF</li>
+<li>5GB free</li>
+<li>DOI available</li>
+</ul></li>
+<li><p>OSF has a default storage option</p>
+
+<ul>
+<li>Not recommended as sole place of storage</li>
+<li>Users can add-in other storage services like Figshare, Google Drive etc. </li>
+</ul></li>
+<li><p>Many other services - please see <a href="http://help.osf.io/m/faqs/l/726460-faqs#what-is-the-cap-on-data-per-user-or-per-project">OSF-FAQ</a></p></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-8" style="background:;">
+  <hgroup>
+    <h2>Backing up</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Backing up your research is <strong>NON NEGOTIABLE</strong></li>
+<li>Redundancy is key: 
+
+<ol>
+<li>Use rolling back up of whole disk using:</li>
+<li>external hard drive, e.g. Time Machine for Mac, Backup and Restore for Windows 10</li>
+<li>cloud storage, e.g. <a href="https://www.backblaze.com/cloud-backup.html">Backblaze</a></li>
+<li>Use OneDrive to back up all important directories</li>
+<li>Keep important research data on RDSF</li>
+<li>Back important code on Github</li>
+</ol></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-9" style="background:;">
+  <hgroup>
+    <h2>Metadata</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Metadata = data about the data, e.g.
+
+<ul>
+<li>units of measurement</li>
+<li>variable explanation</li>
+<li>how/when/where it was collected</li>
+<li>software/hardware used</li>
+<li>author information (contact details)</li>
+</ul></li>
+<li>Should be kept in separate files but in same directory as data </li>
+<li>Often called a <em>data dictionary</em></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-10" style="background:;">
+  <hgroup>
+    <h2>Retrieving data</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li><p>If you&#39;ve retrieved data - put a note to say where it&#39;s from:</p>
+
+<div class="rimage center"><img src="fig/source.png" title="plot of chunk unnamed-chunk-2" alt="plot of chunk unnamed-chunk-2" width="75%" class="plot" /></div></li>
+<li><p>Even better, write a script that downloads it: </p></li>
+</ul>
+
+<pre><code class="r">library(data.table)
+file_name &lt;- &#39;dili_from_anti_TB_treatment.csv&#39;
+base_url &lt;- &#39;http://data.bris.ac.uk/datasets/1vdt21e4mhxxd27hso89cqmhhh/&#39;
+file_url &lt;- paste0(base_url, file_name)
+df &lt;- fread(file_url)
+save(df, file=&#39;local/directory/path&#39;)
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-11" style="background:;">
+  <hgroup>
+    <h2>File formats</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>File formats affect interoperability and accessibility. </li>
+<li>Proprietory formats for data (e.g. custom binary format) or analysis scripts lower interoperability</li>
+<li>For small, simple data text based formats work well e.g. <code>.csv</code></li>
+<li>For structured data use <a href="https://www.w3schools.com/xml/xml_whatis.asp"><code>XML</code></a> or  <a href="https://www.json.org/"><code>json</code></a> or database format e.g. <a href="https://www.mysql.com/"><code>mySQL</code></a></li>
+<li>For large data sets use things like <a href="https://support.hdfgroup.org/HDF5/"><code>HDF5</code></a> which are usable without loading into memory. </li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Overview'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Your research'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='FAIR principles'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='FAIR principles'>
+         4
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=5 title='Storing data'>
+         5
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=6 title='Storage locations - Bristol University'>
+         6
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=7 title='Storage locations - Personal'>
+         7
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=8 title='Backing up'>
+         8
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=9 title='Metadata'>
+         9
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=10 title='Retrieving data'>
+         10
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=11 title='File formats'>
+         11
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- MathJax: Fall back to local if CDN offline but local image fonts are not supported (saves >100MB) -->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        processEscapes: true
+      }
+    });
+  </script>
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <!-- <script src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script> -->
+  <script>window.MathJax || document.write('<script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS":{imageFont:null}});<\/script><script src="../libraries/widgets/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"><\/script>')
+</script>
+<!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="../libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
